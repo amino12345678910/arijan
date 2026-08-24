@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../core/app_theme.dart';
 import '../data/adhkar_data.dart';
 import '../providers/prayer_provider.dart';
-import 'adhkar_list_screen.dart';
+import 'adhkar/adhkar_flow_screen.dart';
 import 'quran_home_screen.dart';
 import 'settings_screen.dart';
 import 'chat_screen.dart';
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         hijriDate.toFormat('dd MMMM yyyy'),
                         style: theme.textTheme.titleLarge?.copyWith(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha:0.9),
                         ),
                       ).animate().fadeIn(delay: 200.ms),
                       
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   margin: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha:0.1),
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
@@ -246,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: AppTheme.goldAccent.withOpacity(0.4),
+              color: AppTheme.goldAccent.withValues(alpha:0.4),
               blurRadius: 15,
               spreadRadius: 2,
             ),
@@ -279,9 +279,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1), // Glass effect
+        color: Colors.white.withValues(alpha:0.1), // Glass effect
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.2)),
+        border: Border.all(color: Colors.white.withValues(alpha:0.2)),
         boxShadow: const [
           BoxShadow(
             color: Colors.black26, 
@@ -322,7 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.redAccent.withOpacity(0.2),
+                        color: Colors.redAccent.withValues(alpha:0.2),
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.redAccent),
                       ),
@@ -392,13 +392,16 @@ class _HomeScreenState extends State<HomeScreen> {
     ).animate().slideY(begin: 0.2, duration: 600.ms).fadeIn();
   }
 
-  Widget _buildCategoryCard(BuildContext context, category, int index) {
+  Widget _buildCategoryCard(BuildContext context, Map<String, dynamic> category, int index) {
      return InkWell(
        onTap: () {
          Navigator.push(
            context,
            MaterialPageRoute(
-             builder: (context) => AdhkarListScreen(category: category),
+             builder: (context) => AdhkarFlowScreen(
+               categoryId: category['id'],
+               title: category['title'] ?? '',
+             ),
            ),
          );
        },
@@ -409,12 +412,12 @@ class _HomeScreenState extends State<HomeScreen> {
              begin: Alignment.topLeft,
              end: Alignment.bottomRight,
              colors: [
-               Colors.white.withOpacity(0.15),
-               Colors.white.withOpacity(0.05),
+               Colors.white.withValues(alpha:0.15),
+               Colors.white.withValues(alpha:0.05),
              ],
            ),
            borderRadius: BorderRadius.circular(24),
-           border: Border.all(color: Colors.white.withOpacity(0.1)),
+           border: Border.all(color: Colors.white.withValues(alpha:0.1)),
            boxShadow: const [
               BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 4)),
            ],
@@ -426,14 +429,14 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppTheme.goldAccent.withOpacity(0.2),
+                  color: AppTheme.goldAccent.withValues(alpha:0.2),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(Icons.menu_book_rounded, size: 32, color: AppTheme.goldAccent),
               ),
               const SizedBox(height: 16),
               Text(
-                category.title,
+                category['title'] ?? '',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -495,7 +498,7 @@ class _HomeScreenState extends State<HomeScreen> {
              Container(
                padding: const EdgeInsets.all(12),
                decoration: BoxDecoration(
-                 color: Colors.white.withOpacity(0.2),
+                 color: Colors.white.withValues(alpha:0.2),
                  shape: BoxShape.circle,
                ),
                child: const Text("🌿", style: TextStyle(fontSize: 30))

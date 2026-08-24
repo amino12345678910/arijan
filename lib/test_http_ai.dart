@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'core/constants.dart';
 
 void main() async {
-  final apiKey = AppConstants.geminiApiKey;
+  final apiKey = AppConstants.groqApiKey;
   if (apiKey == 'YOUR_API_KEY_HERE') {
     print("Error: API Key is not set.");
     return;

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../core/app_theme.dart';
 import '../data/quran_qaloon_data.dart';
-import 'surah_detail_screen.dart';
+import 'quran_pdf_screen.dart';
 
 class QuranHomeScreen extends StatelessWidget {
   const QuranHomeScreen({super.key});
@@ -28,10 +28,10 @@ class QuranHomeScreen extends StatelessWidget {
              final surahNumber = index + 1;
              return Card(
                margin: const EdgeInsets.only(bottom: 12),
-               color: Colors.white.withOpacity(0.08),
+               color: Colors.white.withValues(alpha:0.08),
                shape: RoundedRectangleBorder(
                  borderRadius: BorderRadius.circular(16),
-                 side: BorderSide(color: Colors.white.withOpacity(0.1)),
+                 side: BorderSide(color: Colors.white.withValues(alpha:0.1)),
                ),
                child: ListTile(
                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -72,19 +72,19 @@ class QuranHomeScreen extends StatelessWidget {
                  subtitle: Text(
                    '${quran.getPlaceOfRevelation(surahNumber)} • ${QuranQaloonData.getVerseCount(surahNumber)} آية',
                    style: TextStyle(
-                     color: Colors.white.withOpacity(0.6),
+                     color: Colors.white.withValues(alpha:0.6),
                      fontSize: 12,
                    ),
                  ),
-                 trailing: Icon(Icons.arrow_forward_ios, color: Colors.white.withOpacity(0.3), size: 16),
+                 trailing: Icon(Icons.arrow_forward_ios, color: Colors.white.withValues(alpha:0.3), size: 16),
                  onTap: () {
                    Navigator.push(
                      context,
-                     MaterialPageRoute(builder: (_) => SurahDetailScreen(surahNumber: surahNumber)),
+                     MaterialPageRoute(builder: (_) => QuranPdfScreen(surahNumber: surahNumber)),
                    );
                  },
                ),
-             ).animate().fadeIn(delay: (20 * index).ms).slideX(begin: 0.1, duration: 300.ms);
+             ).animate().fadeIn(delay: (20 * (index % 10)).ms).slideX(begin: 0.1, duration: 300.ms);
            },
          ),
        ),

@@ -24,8 +24,7 @@ class AppTheme {
     end: Alignment.bottomRight,
   );
 
-  static TextTheme get _textTheme {
-    return TextTheme(
+  static final TextTheme _textTheme = TextTheme(
       displayLarge: GoogleFonts.amiri(
         fontSize: 36,
         fontWeight: FontWeight.w900, // Extra Bold
@@ -56,7 +55,6 @@ class AppTheme {
         fontWeight: FontWeight.w400,
       ),
     );
-  }
 
   static ThemeData get lightTheme {
     return ThemeData(
@@ -68,7 +66,6 @@ class AppTheme {
         primary: emeraldPrimary,
         secondary: goldAccent,
         surface: Colors.white,
-        background: lightBackground,
         onPrimary: Colors.white,
         onSecondary: Colors.black,
       ),
@@ -100,7 +97,6 @@ class AppTheme {
         primary: emeraldLight, // Lighter for dark mode
         secondary: goldAccent,
         surface: const Color(0xFF0A261D), // Dark Green Surface
-        background: darkBackground,
         onPrimary: Colors.white,
         onSecondary: Colors.black,
       ),

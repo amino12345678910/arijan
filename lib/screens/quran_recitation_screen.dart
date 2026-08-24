@@ -36,7 +36,6 @@ class _QuranRecitationScreenState extends State<QuranRecitationScreen> {
   String _lastError = "";
   String _lastStatus = "";
   String _usedLocaleId = "";
-  List<String> _debugEvents = [];
 
   @override
   void initState() {
@@ -44,6 +43,12 @@ class _QuranRecitationScreenState extends State<QuranRecitationScreen> {
     _currentAyah = widget.startAyahNumber;
     _speech = stt.SpeechToText();
     _initSpeech();
+  }
+
+  @override
+  void dispose() {
+    _speech.stop();
+    super.dispose();
   }
 
   Future<void> _initSpeech() async {
@@ -210,18 +215,6 @@ class _QuranRecitationScreenState extends State<QuranRecitationScreen> {
       }
   }
 
-  void _finishAyah(List<bool> results, bool isSuccess) {
-      // Deprecated in favor of _verifyAndAutoAdvance
-  }
-
-  void _stopListening({bool autoCheck = false}) {
-     // Deprecated in favor of _stopAndNext
-  }
-
-  void _verifyRecitation() {
-     // Deprecated in favor of _verifyAndAutoAdvance
-  }
-
   void _nextAyah({bool autoStart = false}) {
     setState(() {
       _currentAyah++;
@@ -274,9 +267,9 @@ class _QuranRecitationScreenState extends State<QuranRecitationScreen> {
               padding: const EdgeInsets.all(24),
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.05),
+                color: Colors.white.withValues(alpha:0.05),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: AppTheme.goldAccent.withOpacity(0.3)),
+                border: Border.all(color: AppTheme.goldAccent.withValues(alpha:0.3)),
               ),
               child: _buildAyahText(refWords),
             ),
@@ -362,7 +355,7 @@ class _QuranRecitationScreenState extends State<QuranRecitationScreen> {
                                    return Text(
                                       words[i],
                                       style: GoogleFonts.arefRuqaa(
-                                         color: correct ? Colors.greenAccent : Colors.redAccent.withOpacity(0.8),
+                                         color: correct ? Colors.greenAccent : Colors.redAccent.withValues(alpha:0.8),
                                          fontSize: 20,
                                       ),
                                    );

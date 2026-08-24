@@ -7,30 +7,25 @@ import '../core/constants.dart';
 import '../data/quran_qaloon_data.dart';
 import 'quran_recitation_screen.dart';
 
-class SurahDetailScreen extends StatefulWidget {
+class SurahDetailScreen extends StatelessWidget {
   final int surahNumber;
   const SurahDetailScreen({super.key, required this.surahNumber});
 
   @override
-  State<SurahDetailScreen> createState() => _SurahDetailScreenState();
-}
-
-class _SurahDetailScreenState extends State<SurahDetailScreen> {
-  @override
   Widget build(BuildContext context) {
-    final verseCount = QuranQaloonData.getVerseCount(widget.surahNumber);
+    final verseCount = QuranQaloonData.getVerseCount(surahNumber);
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
-          quran.getSurahNameArabic(widget.surahNumber),
+          quran.getSurahNameArabic(surahNumber),
           style: GoogleFonts.amiri(
             fontWeight: FontWeight.bold, 
             color: AppTheme.goldAccent, 
             fontSize: 28,
             shadows: [
-              Shadow(color: Colors.black.withOpacity(0.5), blurRadius: 10, offset: const Offset(0, 2))
+              Shadow(color: Colors.black.withValues(alpha:0.5), blurRadius: 10, offset: const Offset(0, 2))
             ]
           ),
         ),
@@ -49,7 +44,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
             child: Column(
               children: [
                 // Surah Header
-                if (widget.surahNumber != 9)
+                if (surahNumber != 9)
                   Container(
                     margin: const EdgeInsets.only(bottom: 20),
                     child: Opacity(
@@ -75,12 +70,12 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.03),
+                    color: Colors.white.withValues(alpha:0.03),
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: AppTheme.goldAccent.withOpacity(0.1)),
+                    border: Border.all(color: AppTheme.goldAccent.withValues(alpha:0.1)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withValues(alpha:0.1),
                         blurRadius: 10,
                         spreadRadius: 2,
                       ),
@@ -94,10 +89,10 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                         for (int i = 1; i <= verseCount; i++) ...[
                           TextSpan(
                             text: (() {
-                              String verseText = QuranQaloonData.getVerse(widget.surahNumber, i);
+                              String verseText = QuranQaloonData.getVerse(surahNumber, i);
                               
                               // Remove duplicated Basmalah logic
-                              if (i == 1 && widget.surahNumber != 1 && widget.surahNumber != 9) {
+                              if (i == 1 && surahNumber != 1 && surahNumber != 9) {
                                 final basmalaVariations = AppConstants.basmalaVariations;
                                 for (final prefix in basmalaVariations) {
                                   if (verseText.startsWith(prefix)) {
@@ -126,8 +121,8 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                               padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                border: Border.all(color: AppTheme.goldAccent.withOpacity(0.5), width: 1.5),
-                                color: Colors.black.withOpacity(0.2),
+                                border: Border.all(color: AppTheme.goldAccent.withValues(alpha:0.5), width: 1.5),
+                                color: Colors.black.withValues(alpha:0.2),
                               ),
                               child: Text(
                                 quran.getVerseEndSymbol(i, arabicNumeral: true),
@@ -157,7 +152,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
             context,
             MaterialPageRoute(
               builder: (_) => QuranRecitationScreen(
-                surahNumber: widget.surahNumber,
+                surahNumber: surahNumber,
                 // Default to first verse or whatever logic
               ),
             ),

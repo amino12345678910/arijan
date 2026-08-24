@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import '../../core/app_theme.dart';
@@ -37,16 +38,22 @@ class _AdhkarFlowScreenState extends State<AdhkarFlowScreen> {
       for (var i = 0; i < _adhkarList.length; i++) i: 0
     };
   }
-  
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
   void _onTapCounter(int requiredCount) {
     if (_counts[_currentIndex]! < requiredCount) {
+      HapticFeedback.lightImpact();
       setState(() {
          _counts[_currentIndex] = _counts[_currentIndex]! + 1;
       });
-      
+
       if (_counts[_currentIndex] == requiredCount) {
-        // Haptic feedback or sound?
-        // Auto slide to next after delay
+        HapticFeedback.heavyImpact();
         if (_currentIndex < _adhkarList.length - 1) {
           Future.delayed(const Duration(milliseconds: 500), () {
             if (mounted) {
@@ -215,7 +222,10 @@ class _AdhkarFlowScreenState extends State<AdhkarFlowScreen> {
                              mainAxisAlignment: MainAxisAlignment.center,
                              children: [
                                IconButton(icon: const Icon(Icons.share, color: Colors.white54), onPressed: () {
-                                  Share.share("${dhikr['arabic']}\n\n${dhikr['translation']}");
+                                  final text = dhikr['translation'] != null
+                                    ? "${dhikr['arabic']}\n\n${dhikr['translation']}"
+                                    : "${dhikr['arabic']}";
+                                  Share.share(text);
                                }),
                                // IconButton(icon: const Icon(Icons.refresh, color: Colors.white54), onPressed: () {}),
                              ],

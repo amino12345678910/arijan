@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class QuranQaloonData {
@@ -12,7 +13,7 @@ class QuranQaloonData {
       final jsonString = await rootBundle.loadString('assets/data/quran_qaloon.json');
       _quranData = jsonDecode(jsonString);
     } catch (e) {
-      print('Error loading Qaloun data: \$e');
+      debugPrint('Error loading Qaloun data: \$e');
     }
   }
 
@@ -26,7 +27,7 @@ class QuranQaloonData {
          return targetSurah['ayahs'].length;
       }
     } catch (e) {
-      print('Error getting verse count: \$e');
+      debugPrint('Error getting verse count: \$e');
     }
     return 0; // Default or error
   }
@@ -40,13 +41,6 @@ class QuranQaloonData {
     }
 
     try {
-      final surah = _quranData!['data']['surahs'] != null 
-          ? _quranData!['data']['surahs'][surahNumber - 1] 
-          : _quranData!['data']; // If the API returns single surah or full structure differently
-          
-      // Wait, let's look at the structure from AlQuran Cloud for the full quran endpoint.
-      // Usually it's: data -> surahs -> [0..113] -> ayahs -> [0..N]
-      // Let's assume standard full quran structure:
       final surahs = _quranData!['data']['surahs'];
       if (surahs != null) {
          final targetSurah = surahs[surahNumber - 1];
@@ -56,7 +50,7 @@ class QuranQaloonData {
       }
       return 'الآية غير موجودة';
     } catch (e) {
-      print('Error parsing verse: \$e');
+      debugPrint('Error parsing verse: \$e');
       return '';
     }
   }

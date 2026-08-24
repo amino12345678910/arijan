@@ -32,11 +32,23 @@ class PrayerProvider with ChangeNotifier {
     _startTimer();
   }
 
+  String _lastCountdownString = '';
+
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       _calculateNextPrayerCountdown();
-      notifyListeners();
+      final newString = _formatCountdown();
+      if (newString != _lastCountdownString) {
+        _lastCountdownString = newString;
+        notifyListeners();
+      }
     });
+  }
+
+  String _formatCountdown() {
+    if (_timeUntilNextPrayer == null) return '--:--:--';
+    final t = _timeUntilNextPrayer!;
+    return '${t.inHours.toString().padLeft(2, '0')}:${(t.inMinutes % 60).toString().padLeft(2, '0')}:${(t.inSeconds % 60).toString().padLeft(2, '0')}';
   }
   
   Future<void> refreshLocation() async {
@@ -170,13 +182,10 @@ class PrayerProvider with ChangeNotifier {
 
     _nextPrayer = next;
 
-    if (targetTime != null) {
-      _timeUntilNextPrayer = targetTime.difference(now);
-      
-      // Check for Adhan (e.g. within 1 second)
-      if (_timeUntilNextPrayer!.inSeconds == 0 && !_isPlayingAdhan) {
-        playAdhan();
-      }
+    _timeUntilNextPrayer = targetTime.difference(now);
+
+    if (_timeUntilNextPrayer!.inSeconds == 0 && !_isPlayingAdhan) {
+      playAdhan();
     }
   }
   
@@ -189,16 +198,16 @@ class PrayerProvider with ChangeNotifier {
         // Using local asset exclusively
         await _audioPlayer.play(AssetSource('audio/adhan.mp3'));
         
-        // Reset flag after 4 minutes
         Future.delayed(const Duration(minutes: 4), () {
-            _isPlayingAdhan = false;
-            notifyListeners();
+            if (_timer != null) {
+              _isPlayingAdhan = false;
+              notifyListeners();
+            }
         });
     } catch (e) {
         debugPrint("Error playing adhan: $e");
         _isPlayingAdhan = false;
         notifyListeners();
-        throw Exception("Audio File Error. Please ensure 'assets/audio/adhan.mp3' exists and is valid.");
     }
   }
 

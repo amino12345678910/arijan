@@ -99,12 +99,12 @@ class MoodSelectorScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: mood.gradientColors.last.withOpacity(0.4),
+                  color: mood.gradientColors.last.withValues(alpha:0.4),
                   blurRadius: 12,
                   offset: const Offset(0, 6),
                 ),
               ],
-              border: Border.all(color: Colors.white.withOpacity(0.2)),
+              border: Border.all(color: Colors.white.withValues(alpha:0.2)),
             ),
             child: Stack(
               children: [
@@ -114,7 +114,7 @@ class MoodSelectorScreen extends StatelessWidget {
                   right: -20,
                   child: CircleAvatar(
                     radius: 40,
-                    backgroundColor: Colors.white.withOpacity(0.1),
+                    backgroundColor: Colors.white.withValues(alpha:0.1),
                   ),
                 ),
                 Center(

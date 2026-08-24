@@ -48,3 +48,6 @@ app.*.map.json
 # Extra logs and text dumps
 *.txt
 
+# Large PDF files (use Git LFS for these)
+*.pdf
+

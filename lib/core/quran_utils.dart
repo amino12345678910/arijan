@@ -1,5 +1,3 @@
-import 'package:quran/quran.dart' as quran;
-
 class QuranUtils {
   /// Normalizes Arabic text by removing diacritics (Tashkeel) and unifying Alef forms.
   static String normalizeArabic(String text) {

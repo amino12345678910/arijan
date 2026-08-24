@@ -49,6 +49,7 @@ class QuranProvider with ChangeNotifier {
   int get currentPlayingSurah => _currentPlayingSurah;
   int get currentPlayingAyah => _currentPlayingAyah;
   List<String> get favorites => _favorites;
+  List<String> get bookmarks => _bookmarks;
   int get lastReadSurah => _lastReadSurah;
   int get lastReadAyah => _lastReadAyah;
 
@@ -154,5 +155,11 @@ class QuranProvider with ChangeNotifier {
     await _prefs?.setInt('lastReadSurah', surah);
     await _prefs?.setInt('lastReadAyah', ayah);
     notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
   }
 }

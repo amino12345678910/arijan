@@ -8,9 +8,6 @@ class AppConstants {
     return utf8.decode(base64.decode('Z3NrX1pYeFBhUnRlQjNrQm9pOEJ5QnlCV0dkeWIzckZvVjRnTTg1Z3FvQmhBczR1VjBEV3dJZw=='));
   }
 
-  static String get mistralApiKey => groqApiKey;
-  static String get geminiApiKey => groqApiKey;
-
   static const List<String> basmalaVariations = [
     "بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ", // Found in getVerse
     quran.basmala, // Constant

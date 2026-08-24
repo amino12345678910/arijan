@@ -158,9 +158,9 @@ class MoodDetailScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
+        color: Colors.white.withValues(alpha:0.1),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppTheme.goldAccent.withOpacity(0.3)),
+        border: Border.all(color: AppTheme.goldAccent.withValues(alpha:0.3)),
       ),
       child: Column(
         children: [
@@ -196,7 +196,7 @@ class MoodDetailScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha:0.05),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white12),
       ),
@@ -230,7 +230,7 @@ class MoodDetailScreen extends StatelessWidget {
      return Container(
        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
        decoration: BoxDecoration(
-        color: AppTheme.emeraldPrimary.withOpacity(0.5),
+        color: AppTheme.emeraldPrimary.withValues(alpha:0.5),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

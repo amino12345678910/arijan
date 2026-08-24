@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../core/app_theme.dart';
-import '../../core/constants.dart';
 import '../../providers/quran_provider.dart';
 import 'quran_settings_sheet.dart';
 

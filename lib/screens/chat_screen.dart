@@ -32,6 +32,13 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_scrollController.hasClients) {
@@ -134,11 +141,11 @@ class _ChatScreenState extends State<ChatScreen> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.auto_awesome, size: 64, color: AppTheme.goldAccent.withOpacity(0.5)),
+                            Icon(Icons.auto_awesome, size: 64, color: AppTheme.goldAccent.withValues(alpha:0.5)),
                             const SizedBox(height: 16),
                             Text(
                               "كيف يمكنني مساعدتك اليوم؟",
-                              style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16),
+                              style: TextStyle(color: Colors.white.withValues(alpha:0.5), fontSize: 16),
                             ),
                           ],
                         ).animate().fadeIn(duration: 800.ms),
@@ -156,7 +163,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                   margin: const EdgeInsets.symmetric(vertical: 4),
                                   padding: const EdgeInsets.all(12),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.1),
+                                    color: Colors.white.withValues(alpha:0.1),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(16),
                                       topRight: Radius.circular(16),
@@ -182,8 +189,8 @@ class _ChatScreenState extends State<ChatScreen> {
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
                                 color: isUser 
-                                    ? AppTheme.emeraldPrimary.withOpacity(0.8) 
-                                    : Colors.white.withOpacity(0.1),
+                                    ? AppTheme.emeraldPrimary.withValues(alpha:0.8) 
+                                    : Colors.white.withValues(alpha:0.1),
                                 borderRadius: BorderRadius.only(
                                   topLeft: const Radius.circular(16),
                                   topRight: const Radius.circular(16),
@@ -191,7 +198,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                   bottomRight: isUser ? Radius.zero : const Radius.circular(16),
                                 ),
                                 border: Border.all(
-                                  color: isUser ? AppTheme.goldAccent.withOpacity(0.3) : Colors.white10,
+                                  color: isUser ? AppTheme.goldAccent.withValues(alpha:0.3) : Colors.white10,
                                 ),
                               ),
                               child: isUser 
@@ -208,9 +215,9 @@ class _ChatScreenState extends State<ChatScreen> {
                                       h3: GoogleFonts.amiri(color: AppTheme.goldLight, fontSize: 20, fontWeight: FontWeight.bold),
                                       strong: const TextStyle(color: AppTheme.goldAccent, fontWeight: FontWeight.bold),
                                       listBullet: const TextStyle(color: AppTheme.goldAccent),
-                                      blockquote: TextStyle(color: Colors.white.withOpacity(0.8), fontStyle: FontStyle.italic),
+                                      blockquote: TextStyle(color: Colors.white.withValues(alpha:0.8), fontStyle: FontStyle.italic),
                                       blockquoteDecoration: BoxDecoration(
-                                        color: Colors.white.withOpacity(0.1),
+                                        color: Colors.white.withValues(alpha:0.1),
                                         borderRadius: BorderRadius.circular(8),
                                         border: const Border(right: BorderSide(color: AppTheme.goldAccent, width: 4)), // Right side for RTL
                                       ),
@@ -226,8 +233,8 @@ class _ChatScreenState extends State<ChatScreen> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.3),
-                  border: Border(top: BorderSide(color: Colors.white.withOpacity(0.1))),
+                  color: Colors.black.withValues(alpha:0.3),
+                  border: Border(top: BorderSide(color: Colors.white.withValues(alpha:0.1))),
                 ),
                 child: Row(
                   children: [
@@ -235,16 +242,16 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.05),
+                          color: Colors.white.withValues(alpha:0.05),
                           borderRadius: BorderRadius.circular(24),
-                          border: Border.all(color: Colors.white.withOpacity(0.1)),
+                          border: Border.all(color: Colors.white.withValues(alpha:0.1)),
                         ),
                         child: TextField(
                           controller: _controller,
                           style: const TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             hintText: "اكتب سؤالك هنا...",
-                            hintStyle: TextStyle(color: Colors.white.withOpacity(0.4)),
+                            hintStyle: TextStyle(color: Colors.white.withValues(alpha:0.4)),
                             border: InputBorder.none,
                           ),
                           onSubmitted: (_) => _sendMessage(),
