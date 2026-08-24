@@ -2,121 +2,235 @@
 class AdhkarData {
   static const List<Map<String, dynamic>> morningAdhkar = [
     {
-      "category": "morning",
       "count": 1,
-      "reference": "Al-Bukhari",
-      "arabic": "اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُّـشُور",
-      "translation": "O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the Final Return.",
-      "reward": ""
+      "reference": "رواه الحاكم",
+      "arabic": "أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+      "translation": "آية الكرسي",
+      "reward": "من قالها حين يصبح أُجير من الجن حتى يمسي"
     },
     {
-      "category": "morning",
       "count": 3,
-      "reference": "Abu Dawud 4/319",
-      "arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
-      "translation": "In the Name of Allah, who with His Name nothing on earth or in the heaven can cause harm, and He is the All-Hearing, the All-Knowing.",
-      "reward": "Whoever recites it three times in the morning will not be afflicted by any calamity before evening, and whoever recites it three times in the evening will not be overtaken by any calamity before morning."
+      "reference": "أبو داود والترمذي",
+      "arabic": "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم\nقُلْ هُوَ ٱللَّهُ أَحَدٌ ٱللَّهُ ٱلصَّمَدُ لَمْ يَلِدْ وَلَمْ يُولَدْ وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌ\n\nقُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ مِن شَرِّ مَا خَلَقَ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ\n\nقُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ مَلِكِ ٱلنَّاسِ إِلَٰهِ ٱلنَّاسِ مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+      "translation": "المعوذات",
+      "reward": "تكفيك من كل شيء"
     },
     {
-      "category": "morning",
       "count": 1,
-      "reference": "An-Nasa'i",
-      "arabic": "اَللّهُمَّ إِنِّيْ أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلاً مُتَقَبَّلاً",
-      "translation": "O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.",
+      "reference": "صحيح مسلم 2723",
+      "arabic": "أَصْبَحْنا وَأَصْبَحَ المُلْكُ لِلَّهِ وَالحَمْدُ لِلَّهِ، لا إلهَ إلاّ اللّهُ وَحْدَهُ لا شَريكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ وَهُوَ عَلى كُلِّ شَيءٍ قَدير، رَبِّ أَسْأَلُكَ خَيْرَ ما في هذا اليَوْمِ وَخَيرَ ما بَعْدَهُ، وَأَعوذُ بِكَ مِنْ شَرِّ ما في هذا اليَوْمِ وَشَرِّ ما بَعْدَهُ",
       "reward": ""
     },
     {
-      "category": "morning",
+      "count": 1,
+      "reference": "سنن الترمذي 3391",
+      "arabic": "اللّهُمَّ بِكَ أَصْبَحْنا وَبِكَ أَمْسَيْنا، وَبِكَ نَحْيا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُور",
+      "reward": ""
+    },
+    {
+      "count": 1,
+      "reference": "صحيح البخاري",
+      "arabic": "اللّهُمَّ أَنْتَ رَبِّي لا إلهَ إلاّ أَنْتَ، خَلَقْتَنِي وَأَنا عَبْدُكَ، وَأَنا عَلى عَهْدِكَ وَوَعْدِكَ ما اسْتَطَعْتُ، أَعوذُ بِكَ مِنْ شَرِّ ما صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبي فاغْفِرْ لي فَإِنَّهُ لا يَغْفِرُ الذُّنوبَ إلاّ أَنْتَ",
+      "translation": "سيد الاستغفار",
+      "reward": "من قالها موقناً بها حين يمسي فمات من ليلته دخل الجنة"
+    },
+    {
+      "count": 3,
+      "reference": "صحيح الترغيب 1/273",
+      "arabic": "يا حَيُّ يا قَيّومُ بِرَحْمَتِكَ أَسْتَغيثُ أَصْلِحْ لي شَأْني كُلَّهُ وَلا تَكِلْني إلى نَفْسي طَرْفَةَ عَيْن",
+      "reward": ""
+    },
+    {
+      "count": 3,
+      "reference": "سنن أبي داود 4/324",
+      "arabic": "اللّهُمَّ عافِني في بَدَني، اللّهُمَّ عافِني في سَمْعي، اللّهُمَّ عافِني في بَصَري، لا إلهَ إلاّ أَنْتَ. اللّهُمَّ إِنّي أَعوذُ بِكَ مِنَ الكُفْرِ وَالفَقْرِ، وَأَعوذُ بِكَ مِنْ عَذابِ القَبْرِ، لا إلهَ إلاّ أَنْتَ",
+      "reward": ""
+    },
+    {
+      "count": 7,
+      "reference": "رواه ابن السني",
+      "arabic": "حَسْبِيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ العَرْشِ العَظيم",
+      "reward": "من قالها كفاه الله ما أهمه من أمر الدنيا والآخرة"
+    },
+    {
+      "count": 3,
+      "reference": "رواه الترمذي",
+      "arabic": "بِسْمِ اللهِ الذي لا يَضُرُّ مَعَ اسْمِهِ شَيءٌ في الأرْضِ وَلا في السَّماءِ وَهُوَ السَّميعُ العَليم",
+      "reward": "لم يضره من الله شيء"
+    },
+    {
       "count": 100,
-      "reference": "Muslim 4/2071",
-      "arabic": "سُبْحَانَ اللهِ وَبِحَمْدِهِ",
-      "translation": "Glory is to Allah and to Him is the praise.",
-      "reward": "Whoever says this 100 times a day will have his sins forgiven even if they were like the foam of the sea."
-    }
+      "reference": "صحيح مسلم",
+      "arabic": "سُبْحانَ اللهِ وَبِحَمْدِهِ",
+      "reward": "حُطت خطاياه وإن كانت مثل زبد البحر"
+    },
+    {
+      "count": 100,
+      "reference": "صحيح البخاري ومسلم",
+      "arabic": "لا إلهَ إلاّ اللّهُ وَحْدَهُ لا شَريكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ وَهُوَ عَلى كُلِّ شَيءٍ قَدير",
+      "reward": "كانت له عدل عشر رقاب، وكتبت له مائة حسنة، ومحيت عنه مائة سيئة، وكانت له حرزاً من الشيطان"
+    },
   ];
 
   static const List<Map<String, dynamic>> eveningAdhkar = [
     {
-      "category": "evening",
       "count": 1,
-      "reference": "At-Tirmidhi 3/142",
-      "arabic": "اللّهُـمَّ بِكَ أَمْسَـينا وَبِكَ أَصْـبَحْنا، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ الْمَصِير",
-      "translation": "O Allah, by You we enter the evening and by You we enter the morning, by You we live and by You we die, and to You is the Final Return.",
+      "reference": "رواه الحاكم",
+      "arabic": "أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+      "translation": "آية الكرسي",
+      "reward": "من قالها حين يمسي أُجير من الجن حتى يصبح"
+    },
+    {
+      "count": 3,
+      "reference": "أبو داود والترمذي",
+      "arabic": "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم\nقُلْ هُوَ ٱللَّهُ أَحَدٌ... قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ... قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+      "translation": "المعوذات",
+      "reward": "تكفيك من كل شيء"
+    },
+    {
+      "count": 1,
+      "reference": "صحيح مسلم 2723",
+      "arabic": "أَمْسَيْنا وَأَمْسى المُلْكُ لِلَّهِ وَالحَمْدُ لِلَّهِ، لا إلهَ إلاّ اللّهُ وَحْدَهُ لا شَريكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ وَهُوَ عَلى كُلِّ شَيءٍ قَدير",
       "reward": ""
     },
     {
-      "category": "evening",
-      "count": 3,
-      "reference": "Abu Dawud 4/319",
-      "arabic": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
-      "translation": "In the Name of Allah, who with His Name nothing on earth or in the heaven can cause harm, and He is the All-Hearing, the All-Knowing.",
-      "reward": "Protection from sudden calamities."
-    },
-     {
-      "category": "evening",
       "count": 1,
-      "reference": "Muslim 4/2088",
-      "arabic": "أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
-      "translation": "I seek protection in the Perfect Words of Allah from the evil of what He has created.",
-      "reward": "Whoever says this three times in the evening will be protected from insect stings/bites."
+      "reference": "سنن الترمذي 3391",
+      "arabic": "اللّهُمَّ بِكَ أَمْسَيْنا وَبِكَ أَصْبَحْنا، وَبِكَ نَحْيا وَبِكَ نَمُوتُ وَإِلَيْكَ المَصير",
+      "reward": ""
+    },
+    {
+      "count": 1,
+      "reference": "صحيح البخاري",
+      "arabic": "اللّهُمَّ أَنْتَ رَبِّي لا إلهَ إلاّ أَنْتَ، خَلَقْتَنِي وَأَنا عَبْدُكَ، وَأَنا عَلى عَهْدِكَ وَوَعْدِكَ ما اسْتَطَعْتُ، أَعوذُ بِكَ مِنْ شَرِّ ما صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبي فاغْفِرْ لي فَإِنَّهُ لا يَغْفِرُ الذُّنوبَ إلاّ أَنْتَ",
+      "translation": "سيد الاستغفار",
+      "reward": "من قالها موقناً بها حين يمسي فمات من ليلته دخل الجنة"
+    },
+    {
+      "count": 3,
+      "reference": "صحيح مسلم",
+      "arabic": "أَعوذُ بِكَلِماتِ اللّهِ التّامّاتِ مِنْ شَرِّ ما خَلَق",
+      "reward": "لم يضره شيء تلك الليلة"
+    },
+    {
+      "count": 3,
+      "reference": "صحيح الترغيب 1/273",
+      "arabic": "يا حَيُّ يا قَيّومُ بِرَحْمَتِكَ أَسْتَغيثُ أَصْلِحْ لي شَأْني كُلَّهُ وَلا تَكِلْني إلى نَفْسي طَرْفَةَ عَيْن",
+      "reward": ""
+    },
+    {
+      "count": 100,
+      "reference": "صحيح مسلم",
+      "arabic": "سُبْحانَ اللهِ وَبِحَمْدِهِ",
+      "reward": "حُطت خطاياه وإن كانت مثل زبد البحر"
     },
   ];
 
   static const List<Map<String, dynamic>> sleepAdhkar = [
     {
-      "category": "sleep",
+      "count": 3,
+      "reference": "صحيح البخاري",
+      "arabic": "يَجْمَعُ كَفَّيْهِ ثُمَّ يَنْفُثُ فِيهِمَا فَيَقْرَأُ: قُلْ هُوَ اللَّهُ أَحَدٌ، وَقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ، وَقُلْ أَعُوذُ بِرَبِّ النَّاسِ، ثُمَّ يَمْسَحُ بِهِمَا مَا اسْتَطَاعَ مِنْ جَسَدِهِ",
+      "reward": ""
+    },
+    {
       "count": 1,
-      "reference": "Al-Bukhari",
-      "arabic": "بِاسْمِكَ رَبِّـي وَضَعْـتُ جَنْـبِي ، وَبِكَ أَرْفَعُـه، فَإِن أَمْسَـكْتَ نَفْسِـي فارْحَـمْها ، وَإِنْ أَرْسَلْتَـها فاحْفَظْـها بِمـا تَحْفَـظُ بِه عِبـادَكَ الصّـالِحِـين",
-      "translation": "In Your Name my Lord, I lay down my side, and in Your Name I rise. If You take my soul, have mercy on it, and if You send it back, protect it as You protect Your righteous slaves.",
+      "reference": "صحيح البخاري",
+      "arabic": "اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ... (آية الكرسي)",
+      "translation": "آية الكرسي",
+      "reward": "لن يزال عليه من الله حافظ ولا يقربه شيطان حتى يصبح"
+    },
+    {
+      "count": 1,
+      "reference": "صحيح البخاري 6320",
+      "arabic": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسي فارْحَمْها، وَإِنْ أَرْسَلْتَها فاحْفَظْها بِما تَحْفَظُ بِهِ عِبادَكَ الصّالِحين",
       "reward": ""
     },
     {
-      "category": "sleep",
+      "count": 1,
+      "reference": "صحيح مسلم",
+      "arabic": "اللَّهُمَّ إِنَّكَ خَلَقْتَ نَفْسِي وَأَنْتَ تَوَفَّاهَا، لَكَ مَمَاتُهَا وَمَحْيَاهَا، إِنْ أَحْيَيْتَهَا فَاحْفَظْهَا، وَإِنْ أَمَتَّهَا فَاغْفِرْ لَهَا. اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ",
+      "reward": ""
+    },
+    {
       "count": 33,
-      "reference": "Al-Bukhari 7/71",
+      "reference": "صحيح البخاري 7/71",
       "arabic": "سُبْحَانَ اللَّهِ",
-      "translation": "Glory be to Allah",
-      "reward": "Fatima (RA) complained of blistering hands from grinding flour. The Prophet (SAW) taught her these words are better for her than a servant."
+      "translation": "التسبيح قبل النوم",
+      "reward": ""
     },
     {
-      "category": "sleep",
       "count": 33,
-      "reference": "Al-Bukhari 7/71",
+      "reference": "صحيح البخاري 7/71",
       "arabic": "الْحَمْدُ لِلَّهِ",
-      "translation": "Praise be to Allah",
       "reward": ""
     },
     {
-      "category": "sleep",
       "count": 34,
-      "reference": "Al-Bukhari 7/71",
+      "reference": "صحيح البخاري 7/71",
       "arabic": "اللَّهُ أَكْبَرُ",
-      "translation": "Allah is the Greatest",
-      "reward": ""
-    }
+      "reward": "خير لك من خادم - وصية النبي لفاطمة رضي الله عنها"
+    },
   ];
-  
+
   static const List<Map<String, dynamic>> wakingAdhkar = [
     {
-      "category": "waking",
       "count": 1,
-      "reference": "Al-Bukhari",
+      "reference": "صحيح البخاري",
       "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
-      "translation": "All praise is due to Allah who gave us life after having given us death and unto Him is the resurrection.",
       "reward": ""
-    }
+    },
+    {
+      "count": 1,
+      "reference": "صحيح البخاري",
+      "arabic": "لا إلهَ إلاّ اللّهُ وَحْدَهُ لا شَريكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ وَهُوَ عَلى كُلِّ شَيءٍ قَدير، سُبْحانَ اللهِ، وَالحَمْدُ لِلَّهِ، وَلا إلهَ إلاّ اللهُ، وَاللهُ أَكْبَرُ، وَلا حَوْلَ وَلا قُوَّةَ إلاّ بِاللّهِ العَلِيّ العَظيم، رَبِّ اغْفِرْ لي",
+      "reward": "من قالها غُفر له، فإن دعا استُجيب له، فإن قام فتوضأ ثم صلى قُبلت صلاته"
+    },
   ];
 
   static const List<Map<String, dynamic>> postPrayerAdhkar = [
-     {
-      "category": "post_prayer",
+    {
       "count": 1,
-      "reference": "Muslim",
-      "arabic": "أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ. اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ، تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَالإِكْرَامِ",
-      "translation": "I seek the forgiveness of Allah (3x). O Allah, You are Peace and from You comes peace. Blessed are You, O Owner of Majesty and Honor.",
+      "reference": "صحيح مسلم",
+      "arabic": "أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ",
       "reward": ""
-    }
+    },
+    {
+      "count": 1,
+      "reference": "صحيح مسلم",
+      "arabic": "اللّهُمَّ أَنْتَ السَّلامُ وَمِنْكَ السَّلام، تَبارَكْتَ يا ذا الجَلالِ وَالإِكْرام",
+      "reward": ""
+    },
+    {
+      "count": 33,
+      "reference": "صحيح مسلم",
+      "arabic": "سُبْحانَ اللهِ",
+      "reward": ""
+    },
+    {
+      "count": 33,
+      "reference": "صحيح مسلم",
+      "arabic": "الحَمْدُ لِلَّهِ",
+      "reward": ""
+    },
+    {
+      "count": 33,
+      "reference": "صحيح مسلم",
+      "arabic": "اللهُ أكْبَر",
+      "reward": ""
+    },
+    {
+      "count": 1,
+      "reference": "صحيح مسلم",
+      "arabic": "لا إلهَ إلاّ اللّهُ وَحْدَهُ لا شَريكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ وَهُوَ عَلى كُلِّ شَيءٍ قَدير",
+      "reward": ""
+    },
+    {
+      "count": 1,
+      "reference": "سنن أبي داود",
+      "arabic": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+      "reward": ""
+    },
   ];
 
   static Map<String, List<Map<String, dynamic>>> allAdhkar = {
@@ -128,10 +242,10 @@ class AdhkarData {
   };
 
   static const List<Map<String, dynamic>> categories = [
-    {'id': 'morning', 'title': 'أذكار الصباح', 'icon': 0xe6e0, 'fontPackage': 'material', 'color': 0xFFFDB813}, // Icons.wb_sunny_outlined
-    {'id': 'evening', 'title': 'أذكار المساء', 'icon': 0xe428, 'fontPackage': 'material', 'color': 0xFF3F51B5}, // Icons.nights_stay_outlined
-    {'id': 'sleep', 'title': 'أذكار النوم', 'icon': 0xef42, 'fontPackage': 'material', 'color': 0xFF673AB7}, // Icons.bed_outlined
-    {'id': 'waking', 'title': 'أذكار الاستيقاظ', 'icon': 0xe072, 'fontPackage': 'material', 'color': 0xFF009688}, // Icons.alarm
-    {'id': 'post_prayer', 'title': 'أذكار الصلاة', 'icon': 0xf1df, 'fontPackage': 'material', 'color': 0xFFFFD700}, // Icons.mosque_outlined (gold)
+    {'id': 'morning', 'title': 'أذكار الصباح', 'icon': 0xe6e0, 'color': 0xFFFDB813},
+    {'id': 'evening', 'title': 'أذكار المساء', 'icon': 0xe428, 'color': 0xFF3F51B5},
+    {'id': 'sleep', 'title': 'أذكار النوم', 'icon': 0xef42, 'color': 0xFF673AB7},
+    {'id': 'waking', 'title': 'أذكار الاستيقاظ', 'icon': 0xe072, 'color': 0xFF009688},
+    {'id': 'post_prayer', 'title': 'أذكار بعد الصلاة', 'icon': 0xf1df, 'color': 0xFFFFD700},
   ];
 }

@@ -74,7 +74,7 @@ class _QuranPdfScreenState extends State<QuranPdfScreen> {
           SfPdfViewer.asset(
             'assets/data/quran_qaloon.pdf',
             controller: _pdfController,
-            initialZoomLevel: 1.0,
+            initialZoomLevel: 1.5,
             pageSpacing: 4,
             canShowScrollHead: true,
             canShowPageLoadingIndicator: true,
@@ -83,12 +83,24 @@ class _QuranPdfScreenState extends State<QuranPdfScreen> {
                 _totalPages = details.document.pages.count;
                 _isLoading = false;
               });
-              _goToSurah(widget.surahNumber);
+              Future.delayed(const Duration(milliseconds: 300), () {
+                _goToSurah(widget.surahNumber);
+              });
             },
             onPageChanged: (details) {
               setState(() {
                 _currentPage = details.newPageNumber;
               });
+            },
+            onDocumentLoadFailed: (details) {
+              setState(() {
+                _isLoading = false;
+              });
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('خطأ في تحميل المصحف: ${details.description}')),
+                );
+              }
             },
           ),
           if (_isLoading)
