@@ -38,7 +38,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       '$_selectedType\n\n${_controller.text.trim()}\n\n---\nمرسل من تطبيق أريجان',
     );
 
-    final mailtoUri = Uri.parse('mailto:aminaelayed0@gmail.com?subject=$subject&body=$body');
+    final mailtoUri = Uri.parse('mailto:amin.aa.aeid@gmail.com?subject=$subject&body=$body');
 
     try {
       if (await canLaunchUrl(mailtoUri)) {

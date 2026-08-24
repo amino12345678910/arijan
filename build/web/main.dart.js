@@ -47772,7 +47772,7 @@ s=p}for(;;)switch(s){case 0:k=n.d
 if(B.c.eT(k.a.a).length===0){n.c.av(t.Pu).f.qy(B.agQ)
 s=1
 break}n.am(new A.aBg(n))
-m=A.h5("mailto:aminaelayed0@gmail.com?subject="+A.fE(2,"["+n.e+"] \u0645\u0644\u0627\u062d\u0638\u0629 \u0645\u0646 \u062a\u0637\u0628\u064a\u0642 \u0623\u0631\u064a\u062c\u0627\u0646",B.U,!1)+"&body="+A.fE(2,n.e+"\n\n"+B.c.eT(k.a.a)+"\n\n---\n\u0645\u0631\u0633\u0644 \u0645\u0646 \u062a\u0637\u0628\u064a\u0642 \u0623\u0631\u064a\u062c\u0627\u0646",B.U,!1),0,null)
+m=A.h5("mailto:amin.aa.aeid@gmail.com?subject="+A.fE(2,"["+n.e+"] \u0645\u0644\u0627\u062d\u0638\u0629 \u0645\u0646 \u062a\u0637\u0628\u064a\u0642 \u0623\u0631\u064a\u062c\u0627\u0646",B.U,!1)+"&body="+A.fE(2,n.e+"\n\n"+B.c.eT(k.a.a)+"\n\n---\n\u0645\u0631\u0633\u0644 \u0645\u0646 \u062a\u0637\u0628\u064a\u0642 \u0623\u0631\u064a\u062c\u0627\u0646",B.U,!1),0,null)
 p=4
 s=10
 return A.M(A.aOH(m),$async$vz)
@@ -48308,7 +48308,7 @@ s=p}for(;;)switch(s){case 0:a=m.a
 a0=t.N
 a.push(A.ap(["role","user","content",a2],a0,a0))
 p=4
-l=A.h5("/api/groq/openai/v1/chat/completions",0,null)
+l=A.h5("/.netlify/functions/ai-chat",0,null)
 k=A.b([A.ap(["role","system","content","You are a helpful and polite Islamic Adviser named Arijan. Answer concisely in Arabic unless requested otherwise. Use Quran and Hadith references when appropriate."],a0,a0)],t.m0)
 J.aLF(k,a)
 j=k

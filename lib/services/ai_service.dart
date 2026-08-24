@@ -5,9 +5,9 @@ import 'package:http/http.dart' as http;
 import '../core/constants.dart';
 
 class AiService {
-  // On web, use Netlify proxy to avoid CORS. On mobile, call Groq directly.
+  // On web, use Netlify Function to avoid CORS. On mobile, call Groq directly.
   String get _baseUrl => kIsWeb
-      ? '/api/groq/openai/v1/chat/completions'
+      ? '/.netlify/functions/ai-chat'
       : 'https://api.groq.com/openai/v1/chat/completions';
 
   final List<Map<String, String>> _conversationHistory = [];
