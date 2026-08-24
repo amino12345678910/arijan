@@ -11,7 +11,7 @@ import 'package:geocoding/geocoding.dart';
 class PrayerProvider with ChangeNotifier {
   Coordinates? _coordinates;
   PrayerTimes? _prayerTimes;
-  CalculationParameters? _params = CalculationMethod.muslim_world_league.getParameters();
+  CalculationParameters? _params;
   String _locationStatus = "لم يتم تحديد الموقع";
   Duration? _timeUntilNextPrayer;
   bool _isPlayingAdhan = false;
@@ -26,10 +26,35 @@ class PrayerProvider with ChangeNotifier {
   DateTime get currentTime => DateTime.now();
 
   PrayerProvider() {
-    _coordinates = Coordinates(21.4225, 39.8262); // Makkah default fallback
+    _coordinates = Coordinates(36.8065, 10.1815); // Tunis default fallback
+    _params = CalculationMethod.muslim_world_league.getParameters();
     updatePrayerTimes();
     refreshLocation();
     _startTimer();
+  }
+
+  void _updateCalculationMethod(double latitude, double longitude) {
+    // North Africa (Tunisia, Algeria, Morocco, Libya)
+    if (latitude >= 20 && latitude <= 38 && longitude >= -10 && longitude <= 25) {
+      _params = CalculationMethod.muslim_world_league.getParameters();
+      _params!.madhab = Madhab.shafi;
+    }
+    // Middle East
+    else if (latitude >= 15 && latitude <= 40 && longitude >= 25 && longitude <= 60) {
+      _params = CalculationMethod.umm_al_qura.getParameters();
+    }
+    // South/Southeast Asia
+    else if (latitude >= -10 && latitude <= 30 && longitude >= 60 && longitude <= 150) {
+      _params = CalculationMethod.karachi.getParameters();
+    }
+    // Europe
+    else if (latitude >= 40 && latitude <= 72) {
+      _params = CalculationMethod.muslim_world_league.getParameters();
+    }
+    // Default
+    else {
+      _params = CalculationMethod.muslim_world_league.getParameters();
+    }
   }
 
   String _lastCountdownString = '';
@@ -58,7 +83,7 @@ class PrayerProvider with ChangeNotifier {
     try {
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
-        _locationStatus = "خدمة الموقع غير مفعلة (مكة المكرمة افتراضياً)";
+        _locationStatus = "خدمة الموقع غير مفعلة (تونس افتراضياً)";
         updatePrayerTimes();
         notifyListeners();
         return;
@@ -68,7 +93,7 @@ class PrayerProvider with ChangeNotifier {
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.denied) {
-          _locationStatus = "تم رفض الإذن (مكة المكرمة افتراضياً)";
+          _locationStatus = "تم رفض الإذن (تونس افتراضياً)";
           updatePrayerTimes();
           notifyListeners();
           return;
@@ -76,7 +101,7 @@ class PrayerProvider with ChangeNotifier {
       }
       
       if (permission == LocationPermission.deniedForever) {
-        _locationStatus = "الإذن مرفوض نهائياً (مكة المكرمة افتراضياً)";
+        _locationStatus = "الإذن مرفوض نهائياً (تونس افتراضياً)";
         updatePrayerTimes();
         notifyListeners();
         return;
@@ -84,6 +109,7 @@ class PrayerProvider with ChangeNotifier {
 
       Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
       _coordinates = Coordinates(position.latitude, position.longitude);
+      _updateCalculationMethod(position.latitude, position.longitude);
       
       try {
         // Try Native Geocoding first (Works on Mobile)
@@ -122,7 +148,7 @@ class PrayerProvider with ChangeNotifier {
 
       updatePrayerTimes();
     } catch (e) {
-      _locationStatus = "مكة المكرمة افتراضياً";
+      _locationStatus = "تونس افتراضياً";
       debugPrint("Error getting location: $e");
       updatePrayerTimes();
       notifyListeners();

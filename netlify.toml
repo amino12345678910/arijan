@@ -2,6 +2,14 @@
   publish = "build/web"
   command = ""
 
+# Proxy Groq API calls to bypass CORS
+[[redirects]]
+  from = "/api/groq/*"
+  to = "https://api.groq.com/:splat"
+  status = 200
+  force = true
+
+# SPA fallback (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
