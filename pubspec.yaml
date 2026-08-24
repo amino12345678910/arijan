@@ -57,6 +57,8 @@ dependencies:
   percent_indicator: ^4.2.5
   confetti: ^0.8.0
   syncfusion_flutter_pdfviewer: ^28.2.7
+  cloud_firestore: ^6.9.0
+  firebase_core: ^4.14.0
 
 dev_dependencies:
   flutter_test:

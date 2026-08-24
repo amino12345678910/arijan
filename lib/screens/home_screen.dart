@@ -13,6 +13,7 @@ import 'settings_screen.dart';
 import 'chat_screen.dart';
 import 'mood_selector_screen.dart';
 import 'quiz/quiz_selection_screen.dart';
+import 'community_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -226,6 +227,56 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 12,
                                 color: Colors.white70,
                               ),
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                        const Icon(Icons.arrow_forward_ios, color: Colors.white54),
+                      ],
+                    ),
+                  ).animate().slideX(begin: 0.1, duration: 800.ms).fadeIn(),
+                ),
+              ),
+            ),
+            // Community Section
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const CommunityScreen()),
+                    );
+                  },
+                  borderRadius: BorderRadius.circular(24),
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(colors: [Color(0xFF1a2a6c), Color(0xFFb21f1f), Color(0xFFfdbb2d)]),
+                      borderRadius: BorderRadius.circular(24),
+                      boxShadow: const [
+                        BoxShadow(color: Colors.black26, blurRadius: 10, offset: Offset(0, 5)),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: const BoxDecoration(color: Colors.white24, shape: BoxShape.circle),
+                          child: const Icon(Icons.forum_rounded, color: Colors.white, size: 28),
+                        ),
+                        const SizedBox(width: 16),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "مجتمع أريجان",
+                              style: GoogleFonts.amiri(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
+                            ),
+                            Text(
+                              "شارك خواطرك وأدعيتك",
+                              style: GoogleFonts.cairo(fontSize: 12, color: Colors.white70),
                             ),
                           ],
                         ),

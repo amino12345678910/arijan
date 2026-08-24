@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'core/app_theme.dart';
+import 'core/firebase_config.dart';
 import 'screens/splash_screen.dart';
 import 'providers/prayer_provider.dart';
 
@@ -9,6 +11,7 @@ import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: FirebaseConfig.webOptions);
   await initializeDateFormatting('ar', null);
   runApp(const ArijApp());
 }
@@ -27,10 +30,10 @@ class ArijApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.dark, // Force Dark Mode as per user request
-        locale: const Locale('ar'), // Force Arabic
+        themeMode: ThemeMode.dark,
+        locale: const Locale('ar'),
         supportedLocales: const [
-          Locale('ar'), 
+          Locale('ar'),
         ],
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
